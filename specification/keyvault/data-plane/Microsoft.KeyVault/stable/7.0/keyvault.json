@@ -6,17 +6,27 @@
     "version": "7.0"
   },
   "x-ms-parameterized-host": {
-    "hostTemplate": "{vaultBaseUrl}",
+    "hostTemplate": "{vaultName}.{keyVaultDnsSuffix}",
     "useSchemePrefix": false,
     "positionInOperation": "first",
     "parameters": [
       {
-        "name": "vaultBaseUrl",
-        "description": "The vault name, for example https://myvault.vault.azure.net.",
+        "name": "vaultName",
+        "description": "The name of the vault to execute operations on.",
         "required": true,
         "type": "string",
         "in": "path",
         "x-ms-skip-url-encoding": true
+      },
+      {
+        "name": "keyVaultDnsSuffix",
+        "description": "The URI used as the base for all key vault requests.",
+        "required": true,
+        "type": "string",
+        "in": "path",
+        "x-ms-skip-url-encoding": true,
+        "default": "vault.azure.net",
+        "x-ms-parameter-location": "client"
       }
     ]
   },
