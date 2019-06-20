@@ -6,7 +6,7 @@
     "version": "7.0"
   },
   "x-ms-parameterized-host": {
-    "hostTemplate": "{vaultName}.{keyVaultDnsSuffix}",
+    "hostTemplate": "https://{vaultName}.{keyVaultDnsSuffix}",
     "useSchemePrefix": false,
     "positionInOperation": "first",
     "parameters": [
